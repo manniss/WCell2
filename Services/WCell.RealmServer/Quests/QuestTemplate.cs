@@ -134,12 +134,12 @@ namespace WCell.RealmServer.Quests
 		public uint MoneyAtMaxLevel;
 
 		/// <summary>
-		/// Given spell id, which is added to character's spell book when finishing the quest.
+		/// Cast spell id of spell which is casted on character when finishing the quest.
 		/// </summary>
 		public SpellId RewSpell;
 
 		/// <summary>
-		/// Cast spell id of spell which is casted on character when finishing the quest.
+		/// Cast spell id of spell which is casted on character when starting the quest.
 		/// </summary>
 		public SpellId CastSpell;
 
@@ -1210,9 +1210,9 @@ namespace WCell.RealmServer.Quests
 				receiver.SetTitle(RewardTitleId, false);
 			}
 
-			if(CastSpell != SpellId.None)
+			if(RewSpell != SpellId.None)
 			{
-				receiver.SpellCast.TriggerSelf(CastSpell);
+				receiver.SpellCast.TriggerSelf(RewSpell);
 			}
 			return true;
 		}
