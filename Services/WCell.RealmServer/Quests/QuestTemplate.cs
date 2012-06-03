@@ -1137,6 +1137,19 @@ namespace WCell.RealmServer.Quests
 			return true;
 		}
 
+        /// <summary>
+        /// Tries to cast the Initial Spell
+        /// </summary>
+        /// <returns>Always returns true.</returns>
+        public bool CastInitialSpel(Character receiver)
+        {
+            if (CastSpell != SpellId.None)
+            {
+                receiver.SpellCast.TriggerSelf(CastSpell);
+            }
+            return true;
+        }
+
 		/// <summary>
 		/// Tries to give all Rewards (or none at all).
 		/// </summary>
