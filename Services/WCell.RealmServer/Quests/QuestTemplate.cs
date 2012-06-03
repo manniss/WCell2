@@ -134,9 +134,14 @@ namespace WCell.RealmServer.Quests
 		public uint MoneyAtMaxLevel;
 
 		/// <summary>
-		/// Cast spell id of spell which is casted on character when finishing the quest.
+		/// Cast spell id of spell which is shown to be cast on character when finishing the quest.
 		/// </summary>
 		public SpellId RewSpell;
+
+        /// <summary>
+        /// Cast spell id of spell which is cast on character when finishing the quest.
+        /// </summary>
+        public SpellId RewSpellCast;
 
 		/// <summary>
 		/// Cast spell id of spell which is casted on character when starting the quest.
@@ -1223,9 +1228,9 @@ namespace WCell.RealmServer.Quests
 				receiver.SetTitle(RewardTitleId, false);
 			}
 
-			if(RewSpell != SpellId.None)
+			if(RewSpellCast != SpellId.None)
 			{
-				receiver.SpellCast.TriggerSelf(RewSpell);
+				receiver.SpellCast.TriggerSelf(RewSpellCast);
 			}
 			return true;
 		}
