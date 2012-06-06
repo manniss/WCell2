@@ -1146,7 +1146,7 @@ namespace WCell.RealmServer.Quests
         /// Tries to cast the Initial Spell
         /// </summary>
         /// <returns>Always returns true.</returns>
-        public bool CastInitialSpel(Character receiver)
+        public bool CastInitialSpell(Character receiver)
         {
             if (CastSpell != SpellId.None)
             {
